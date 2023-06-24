@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Playfair Cipher</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="playfair.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1><span>TEXT ENCRYPTION</span> USING CRYPTOGRAPHY</h1>
+    </div>
+    <main>
+        <div id="inSec">
+            <br>
+            <br> ENCRYPTION - PLAYFAIR CIPHER
+            <hr>
+            <br>
+            <p id="inputT">Keyword: </p>
+            <input id="intext" type="text" name="keyword" placeholder="Enter the encryption key(text)...">
+            <button id="subButton" type="button">Submit</button><br>
+        </div>
+        <div id="inSec">
+            <label id="inputP" style="color: black;">Plaintext : </label>
+            <input id="textP" name="plainM" placeholder="Enter the plaintext...">
+            <button id="encButton" type="button">Encrypt</button>
+        </div>
+        <br><br>
+        <div class="encryptedText">
+            THE ENCRYPTED TEXT IS :
+            <div id="encT"></div>
+        </div>
+    </main>
+    <div class="main3">
+        <a href="choose.html">
+            <button class="button"><span>Back</span></button>
+        </a>
+    </div>
+
+    <script src="playfair.js"></script>
+
+</body>
+
+</html>

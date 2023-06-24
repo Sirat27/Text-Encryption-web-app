@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enc_dec</title>
+    <link rel="stylesheet" href="enc_dec.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1><span>TEXT ENCRYPTION</span> USING CRYPTOGRAPHY</h1>
+    </div>
+    <br>
+
+    <div id="in" class="middle">
+        <br> ENCRYPTION - CAESAR CIPHER
+        <hr>
+        <br>
+        <label for="myInputKey"><b>Enter the key(integer) :</b></label>
+        <input type="number" id="myInputKey" placeholder="Key"> &nbsp;&nbsp;&nbsp;
+        <br><br><br>
+        <label for="myInput"><b>Enter the text :</b></label>
+        <input type="text" id="myInput" placeholder="Plaintext"> &nbsp;&nbsp;&nbsp;
+        <input type="button" value="Encrypt" id="btn1">
+        <br><br>
+        <p class="output" id="output1" style="text-align:center;">Encrypted text will be shown here</p>
+
+    </div>
+
+    <div class="main3">
+        <a href="choose.html">
+            <button class="button"><span>Back</span></button>
+        </a>
+    </div>
+
+    <script>
+        let key1 = document.getElementById('myInputKey');
+        let txt1 = document.getElementById('myInput');
+        let btn1 = document.getElementById('btn1');
+        let out1 = document.getElementById('output1');
+        btn1.addEventListener('click', function(e) {
+            var string = txt1.value;
+            var shift = Number(key1.value);
+            e.preventDefault();
+            out = encdec(string.toLowerCase(), shift);
+            setTimeout(function() {
+                out1.innerText = out;
+            }, 1);
+        });
+        abc = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+
+        function encdec(str, number) {
+            num = number % 26;
+            res = "";
+            for (i = 0; i < str.length; i++) {
+                for (j = 0; j < abc.length; j++) {
+                    if (str[i] == abc[j]) {
+                        if (abc[j + num] == undefined) {
+                            res += abc[j + 26 + num];
+                        } else res += abc[j + num]
+                        break;
+                    }
+
+                }
+                if (!abc.includes(str[i])) {
+                    res += str[i];
+                }
+            }
+            return res;
+        }
+    </script>
+</body>
+
+</html>
